@@ -1,3 +1,14 @@
 <h2 id="title">Welcome to Ember</h2>
 
-{{outlet}}
+<Konva::Stage
+  @config={{hash width=1440 height=800}}
+  as |stage s|
+>
+  <stage.Layer as |layer|>
+    <layer.Circle @width={{s}} height={{s}} />
+    <layer.Rect @width={{s}} height={{s}} />
+    <layer.Label @width={{s}} height={{s}} as |label|>
+      <label.Text @text="Hello world"}}></label.Text>
+    </layer.Label>
+  </stage.Layer>
+</Konva::Stage>

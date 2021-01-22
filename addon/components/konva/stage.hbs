@@ -1,0 +1,14 @@
+<div
+  {{did-insert this.initializeKonva}}
+  {{did-update this.updateKonva @config}}
+  ...attributes
+></div>
+
+{{#if this.konvaNode}}
+  {{yield (hash
+    Layer=(component "konva/layer" parent=this.konvaNode)
+    Label=(component "konva/label" parent=this.konvaNode)
+    Rect=(component "konva/rect" parent=this.konvaNode)
+    Circle=(component "konva/circle" parent=this.konvaNode)
+  ) this.s}}
+{{/if}}
