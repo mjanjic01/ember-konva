@@ -10,7 +10,8 @@ const KONVA_CONTAINER_CLASSES = [
   'Group',
   'Layer',
   'FastLayer',
-  'Label'
+  'Label',
+  'Transformer'
 ];
 
 const KONVA_SHAPE_CLASSES = [
@@ -28,7 +29,6 @@ const KONVA_SHAPE_CLASSES = [
   'Star',
   'Text',
   'TextPath',
-  'Transformer',
   'Wedge'
 ];
 
