@@ -5,11 +5,10 @@ import updatePicture from 'ember-konva/utils/update-picture';
 const propsToSkip = { parent: true };
 
 export default function applyNodeProps(
-  component,
+  instance,
   props = {},
   oldProps = {}
 ) {
-  const instance = component._element;
   var updatedProps = {};
   var hasUpdates = false;
   for (let key in oldProps) {
