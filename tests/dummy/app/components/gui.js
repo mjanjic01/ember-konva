@@ -1,0 +1,77 @@
+/* global dat */
+
+import Component from '@glimmer/component';
+import {tracked} from '@glimmer/tracking';
+import {action} from '@ember/object';
+
+export default class GuiComponent extends Component {
+  @tracked circleX = 50
+  @tracked circleY = 50
+  @tracked circleWidth = 50
+  @tracked circleHeight = 50
+  @tracked circleFill = '#000000'
+
+  @tracked rectX = 100
+  @tracked rectY = 100
+  @tracked rectWidth = 50
+  @tracked rectHeight = 50
+  @tracked rectFill = '#000000'
+
+  @tracked textX = 200
+  @tracked textY = 200
+  @tracked textWidth = 50
+  @tracked textHeight = 50
+  @tracked textFill = '#000000'
+  @tracked textContent = 'Hello world'
+
+  @tracked circleVisible = true
+  @tracked rectVisible = true
+  @tracked textVisible = true
+
+  @tracked isCircleVisible = true
+  @tracked isRectVisible = true
+  @tracked isTextVisible = true
+
+  constructor() {
+    super(...arguments);
+
+    this.gui = new dat.GUI();
+
+    const circleFolder = this.gui.addFolder('Circle');
+    const rectFolder = this.gui.addFolder('Rect');
+    const textFolder = this.gui.addFolder('Text');
+
+    this.gui.add(this, 'isCircleVisible');
+    this.gui.add(this, 'isRectVisible');
+    this.gui.add(this, 'isTextVisible');
+
+    circleFolder.add(this, 'circleX', 0, 1000);
+    circleFolder.add(this, 'circleY', 0, 1000);
+    circleFolder.add(this, 'circleWidth', 0, 1000);
+    circleFolder.add(this, 'circleHeight', 0, 1000);
+    circleFolder.add(this, 'circleVisible');
+    circleFolder.addColor(this, 'circleFill');
+
+    rectFolder.add(this, 'rectX', 0, 1000);
+    rectFolder.add(this, 'rectY', 0, 1000);
+    rectFolder.add(this, 'rectWidth', 0, 1000);
+    rectFolder.add(this, 'rectHeight', 0, 1000);
+    rectFolder.add(this, 'rectVisible');
+    rectFolder.addColor(this, 'rectFill');
+
+    textFolder.add(this, 'textX', 0, 1000);
+    textFolder.add(this, 'textY', 0, 1000);
+    textFolder.add(this, 'textWidth', 0, 1000);
+    textFolder.add(this, 'textHeight', 0, 1000);
+    textFolder.add(this, 'textContent', 0, 1000);
+    textFolder.add(this, 'textVisible');
+    textFolder.addColor(this, 'textFill');
+  }
+
+  @action
+  updatePosition(propName, {currentTarget}) {
+    this[`${propName}X`] = currentTarget.attrs.x;
+    this[`${propName}Y`] = currentTarget.attrs.y;
+    this.gui.updateDisplay();
+  }
+}

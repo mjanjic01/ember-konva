@@ -1,0 +1,54 @@
+<Konva::Stage
+  @width={{1440}}
+  @height={{800}}
+  as |stage|
+>
+  <stage.Layer as |layer|>
+    {{#if this.isCircleVisible}}
+      <layer.Circle
+        @width={{this.circleWidth}}
+        @height={{this.circleHeight}}
+        @x={{this.circleX}}
+        @y={{this.circleY}}
+        @fill={{this.circleFill}}
+        @visible={{this.circleVisible}}
+        @draggable={{true}}
+        @onDragEnd={{fn this.updatePosition "circle"}}
+      />
+    {{/if}}
+
+    {{#if this.isRectVisible}}
+      <layer.Rect
+        @width={{this.rectWidth}}
+        @height={{this.rectHeight}}
+        @x={{this.rectX}}
+        @y={{this.rectY}}
+        @fill={{this.rectFill}}
+        @visible={{this.rectVisible}}
+        @draggable={{true}}
+        @onDragEnd={{fn this.updatePosition "rect"}}
+      />
+    {{/if}}
+
+    {{#if this.isTextVisible}}
+      <layer.Label as |label|>
+        <label.Text
+          @text={{this.textContent}}
+          @x={{this.textX}}
+          @y={{this.textY}}
+          @width={{this.textWidth}}
+          @height={{this.textHeight}}
+          @fill={{this.textFill}}
+          @visible={{this.textVisible}}
+          @draggable={{true}}
+          @ellipsis={{true}}
+          @wrap="none"
+          @onDragEnd={{fn this.updatePosition "text"}}
+        />
+      </layer.Label>
+    {{/if}}
+
+    <Booking @layer={{layer}} />
+
+  </stage.Layer>
+</Konva::Stage>

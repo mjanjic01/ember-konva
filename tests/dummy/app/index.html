@@ -11,11 +11,18 @@
 
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/dummy.css">
+    <style>
+      .dg.ac {
+        z-index: 100 !important;
+      }
+    </style>
 
     {{content-for "head-footer"}}
   </head>
   <body>
     {{content-for "body"}}
+
+    <script src="https://cdn.tutorialjinni.com/dat-gui/0.7.6/dat.gui.min.js"></script>
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/dummy.js"></script>
