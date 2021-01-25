@@ -43,6 +43,7 @@ function createKonvaComponentClass(KonvaNode) {
       this.konvaNode = new KonvaNode(this.props);
       this.args.parent.add(this.konvaNode);
       this.updateKonva([this.props]);
+      this.args.onNodeAdded?.(this.konvaNode);
     }
 
     get props() {
@@ -96,7 +97,7 @@ export function initialize(application) {
         TextPath=(component "konva/text-path" parent=this.konvaNode)
         Transformer=(component "konva/transformer" parent=this.konvaNode)
         Wedge=(component "konva/wedge" parent=this.konvaNode)
-      )}}
+      ) this.konvaNode}}
     `, ComponentClass)
     application.register(`component:konva/${dasherize(konvaClassName)}`, ComponentClass);
   });
