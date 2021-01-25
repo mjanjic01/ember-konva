@@ -3,6 +3,7 @@
 import updatePicture from 'ember-konva/utils/update-picture';
 
 const propsToSkip = { parent: true };
+const EVENTS_NAMESPACE = 'ember-konva-event';
 
 export default function applyNodeProps(
   instance,
@@ -19,7 +20,7 @@ export default function applyNodeProps(
     var propChanged = oldProps[key] !== props[key];
     if (isEvent && propChanged) {
       var eventName = key.substr(2).toLowerCase();
-      instance.off(eventName, oldProps[key]);
+      instance.off(`${eventName}.${EVENTS_NAMESPACE}`, oldProps[key]);
     }
     var toRemove = !props.hasOwnProperty(key);
     if (toRemove) {
@@ -35,8 +36,8 @@ export default function applyNodeProps(
     if (isEvent && toAdd) {
       let eventName = key.substr(2).toLowerCase();
       if (props[key]) {
-        instance.off(eventName);
-        instance.on(eventName, props[key]);
+        instance.off(`${eventName}.${EVENTS_NAMESPACE}`);
+        instance.on(`${eventName}.${EVENTS_NAMESPACE}`, props[key]);
       }
     }
     if (!isEvent && props[key] !== oldProps[key]) {
