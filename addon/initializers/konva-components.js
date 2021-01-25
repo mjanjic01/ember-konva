@@ -1,11 +1,12 @@
 import Konva from 'konva';
+import hbs from 'htmlbars-inline-precompile';
 import Component from '@glimmer/component';
 import {setComponentTemplate} from '@ember/component';
 import { action } from '@ember/object';
 import { dasherize } from '@ember/string';
+
 import applyNodeProps from 'ember-konva/utils/apply-node-props';
-import hbs from 'htmlbars-inline-precompile';
-import updatePicture from '../utils/update-picture';
+import updatePicture from 'ember-konva/utils/update-picture';
 
 const KONVA_CONTAINER_CLASSES = [
   'Group',
