@@ -9,7 +9,7 @@ export default class BookingComponent extends Component {
     super(...arguments);
 
     const image = new Image(20, 20);
-    image.src = '/assets/image.png';
+    image.src = '/assets/images/image.png';
     image.onload = this.onImageLoad;
   }
 
