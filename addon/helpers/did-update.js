@@ -1,3 +1,5 @@
+// From: https://github.com/buschtoens/ember-render-helpers
+
 import Helper from '@ember/component/helper';
 import { assert } from '@ember/debug';
 
