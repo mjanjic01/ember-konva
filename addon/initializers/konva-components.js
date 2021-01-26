@@ -2,8 +2,8 @@ import Konva from 'konva';
 import hbs from 'htmlbars-inline-precompile';
 import Component from '@glimmer/component';
 import {setComponentTemplate} from '@ember/component';
-import { action } from '@ember/object';
-import { dasherize } from '@ember/string';
+import {action} from '@ember/object';
+import {dasherize} from '@ember/string';
 
 import applyNodeProps from 'ember-konva/utils/apply-node-props';
 import updatePicture from 'ember-konva/utils/update-picture';

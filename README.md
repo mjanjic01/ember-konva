@@ -1,7 +1,8 @@
 ember-konva
 ==============================================================================
 
-[Short description of the addon.]
+Ember component bindings for the [Konva](https://konvajs.org/) canvas library
+
 
 
 Compatibility
@@ -23,9 +24,35 @@ ember install ember-konva
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+Installation
 
+```
+ember install ember-konva
+```
 
+Examples
+
+```js
+```
+
+```hbs
+{{!-- app/components/konva-example.hbs --}}
+
+<Konva::Stage
+  @width={{1440}}
+  @height={{800}}
+  as |stage|
+>
+  <stage.Layer as |layer|>
+    <layer.Text
+      @text="Hello ember-konva!"
+      @x={{200}}
+      @y={{100}}
+      @fill="#A5D6FF"
+    />
+  </stage.Layer>
+</Konva::Stage>
+```
 Contributing
 ------------------------------------------------------------------------------
 
