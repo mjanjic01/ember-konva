@@ -2,27 +2,24 @@
 
 import updatePicture from 'ember-konva/utils/update-picture';
 
-const propsToSkip = { parent: true, onNodeAdded: true };
+const propsToSkip = { parent: true, afterNodeInit: true };
 const EVENTS_NAMESPACE = 'ember-konva-event';
 
-export default function applyNodeProps(
-  instance,
-  props = {},
-  oldProps = {}
-) {
-  var updatedProps = {};
-  var hasUpdates = false;
+export default function applyNodeProps(instance, props = {}, oldProps = {}) {
+  const updatedProps = {};
+  let hasUpdates = false;
+
   for (let key in oldProps) {
     if (propsToSkip[key]) {
       continue;
     }
-    var isEvent = key.slice(0, 2) === 'on';
-    var propChanged = oldProps[key] !== props[key];
-    if (isEvent && propChanged) {
-      var eventName = key.substr(2).toLowerCase();
+    const isEvent = key.slice(0, 2) === 'on';
+    const hasPropChanged = oldProps[key] !== props[key];
+    if (isEvent && hasPropChanged) {
+      const eventName = key.substr(2).toLowerCase();
       instance.off(`${eventName}.${EVENTS_NAMESPACE}`, oldProps[key]);
     }
-    var toRemove = !props.hasOwnProperty(key);
+    const toRemove = !props.hasOwnProperty(key);
     if (toRemove) {
       instance.setAttr(key, undefined);
     }
@@ -31,10 +28,10 @@ export default function applyNodeProps(
     if (propsToSkip[key]) {
       continue;
     }
-    let isEvent = key.slice(0, 2) === 'on';
-    var toAdd = oldProps[key] !== props[key];
-    if (isEvent && toAdd) {
-      let eventName = key.substr(2).toLowerCase();
+    const isEvent = key.slice(0, 2) === 'on';
+    const shouldAddProp = oldProps[key] !== props[key];
+    if (isEvent && shouldAddProp) {
+      const eventName = key.substr(2).toLowerCase();
       if (props[key]) {
         instance.off(`${eventName}.${EVENTS_NAMESPACE}`);
         instance.on(`${eventName}.${EVENTS_NAMESPACE}`, props[key]);

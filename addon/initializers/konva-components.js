@@ -43,7 +43,7 @@ function createKonvaComponentClass(KonvaNode) {
       this.konvaNode = new KonvaNode(this.props);
       this.args.parent.add(this.konvaNode);
       this.updateKonva([this.props]);
-      this.args.onNodeAdded?.(this.konvaNode);
+      this.args.afterNodeInit?.(this.konvaNode);
     }
 
     get props() {

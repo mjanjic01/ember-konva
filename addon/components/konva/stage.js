@@ -7,10 +7,6 @@ import updatePicture from 'ember-konva/utils/update-picture';
 export default class KonvaStage extends Component {
   @tracked konvaNode
 
-  constructor() {
-    super(...arguments);
-  }
-
   willDestroy() {
     super.willDestroy(...arguments);
 
@@ -34,5 +30,6 @@ export default class KonvaStage extends Component {
     });
 
     updatePicture(this.konvaNode);
+    this.args.afterNodeInit?.(this.konvaNode);
   }
 }
