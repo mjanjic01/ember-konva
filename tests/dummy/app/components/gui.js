@@ -6,21 +6,22 @@ import {action} from '@ember/object';
 
 export default class GuiComponent extends Component {
   @tracked circleX = 50
-  @tracked circleY = 50
+  @tracked circleY = 200
   @tracked circleWidth = 50
   @tracked circleHeight = 50
   @tracked circleFill = '#000000'
 
   @tracked rectX = 100
-  @tracked rectY = 100
+  @tracked rectY = 175
   @tracked rectWidth = 50
   @tracked rectHeight = 50
   @tracked rectFill = '#000000'
 
   @tracked textX = 200
   @tracked textY = 200
-  @tracked textWidth = 50
+  @tracked textWidth = 200
   @tracked textHeight = 50
+  @tracked textFontSize = 16
   @tracked textFill = '#000000'
   @tracked textContent = 'Hello world'
 
@@ -32,8 +33,15 @@ export default class GuiComponent extends Component {
   @tracked isRectVisible = true
   @tracked isTextVisible = true
 
+  @tracked image
+
   constructor() {
     super(...arguments);
+
+    const image = new Image(20, 20);
+    image.src = '/assets/images/konva.png';
+    image.onload = this.onImageLoad;
+
 
     this.gui = new dat.GUI();
 
@@ -63,7 +71,8 @@ export default class GuiComponent extends Component {
     textFolder.add(this, 'textY', 0, 1000);
     textFolder.add(this, 'textWidth', 0, 1000);
     textFolder.add(this, 'textHeight', 0, 1000);
-    textFolder.add(this, 'textContent', 0, 1000);
+    textFolder.add(this, 'textFontSize', 0, 100);
+    textFolder.add(this, 'textContent');
     textFolder.add(this, 'textVisible');
     textFolder.addColor(this, 'textFill');
   }
@@ -73,5 +82,10 @@ export default class GuiComponent extends Component {
     this[`${propName}X`] = currentTarget.attrs.x;
     this[`${propName}Y`] = currentTarget.attrs.y;
     this.gui.updateDisplay();
+  }
+
+  @action
+  onImageLoad({target}) {
+    this.image = target;
   }
 }
