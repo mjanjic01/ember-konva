@@ -1,8 +1,9 @@
 ember-konva
 ==============================================================================
 
-Ember component bindings for the [Konva](https://konvajs.org/) canvas library
+![ember-konva Logo](https://github.com/mjanjic01/ember-konva/raw/master/ember-konva.png)
 
+Ember component bindings for the [Konva](https://konvajs.org/) canvas library
 
 
 Compatibility
