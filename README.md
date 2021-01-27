@@ -24,12 +24,6 @@ ember install ember-konva
 Usage
 ------------------------------------------------------------------------------
 
-Installation
-
-```
-ember install ember-konva
-```
-
 Examples
 
 ```hbs
@@ -88,8 +82,6 @@ Examples
 </Konva::Stage>
 ```
 
-Usage
-------------------------------------------------------------------------------
 This addon provides an `object` helper. This helper should be used instead of the ember built-in `hash` helper when passing component properties. \
 Konva relies on some object prototype methods which are stripped with the hash helper ([ember apidoc](https://api.emberjs.com/ember/release/classes/Ember.Templates.helpers/methods/hash?anchor=hash))
 
