@@ -12,8 +12,7 @@ const KONVA_CONTAINER_CLASSES = [
   'Group',
   'Layer',
   'FastLayer',
-  'Label',
-  'Transformer'
+  'Label'
 ];
 
 const KONVA_SHAPE_CLASSES = [
@@ -95,7 +94,6 @@ export function initialize(application) {
         Tag=(component "konva/tag" parent=this.konvaNode)
         Text=(component "konva/text" parent=this.konvaNode)
         TextPath=(component "konva/text-path" parent=this.konvaNode)
-        Transformer=(component "konva/transformer" parent=this.konvaNode)
         Wedge=(component "konva/wedge" parent=this.konvaNode)
       ) this.konvaNode}}
     `, ComponentClass)

@@ -4,6 +4,30 @@ import { initialize } from 'dummy/initializers/konva-components';
 import { module, test } from 'qunit';
 import Resolver from 'ember-resolver';
 import { run } from '@ember/runloop';
+import { dasherize } from '@ember/string';
+
+const COMPONENT_NAMES = [
+  'Arc',
+  'Arrow',
+  'Circle',
+  'Ellipse',
+  'FastLayer',
+  'Group',
+  'Image',
+  'Label',
+  'Layer',
+  'Line',
+  'Path',
+  'Rect',
+  'RegularPolygon',
+  'Ring',
+  'Sprite',
+  'Star',
+  'Tag',
+  'Text',
+  'TextPath',
+  'Wedge'
+];
 
 module('Unit | Initializer | konva-components', function(hooks) {
   hooks.beforeEach(function() {
@@ -20,10 +44,16 @@ module('Unit | Initializer | konva-components', function(hooks) {
     run(this.application, 'destroy');
   });
 
-  // TODO: Replace this with your real tests.
-  test('it works', async function(assert) {
+  test('it registers konva components', async function(assert) {
     await this.application.boot();
 
-    assert.ok(true);
+    COMPONENT_NAMES.forEach((componentName) => {
+      assert.ok(
+        this.application
+          .__registry__
+          .registrations[`component:konva/${dasherize(componentName)}`],
+        `Konva ${componentName} component should be registered`
+      );
+    });
   });
 });
