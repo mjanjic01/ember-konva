@@ -1,10 +1,10 @@
-import Application from '@ember/application';
-
-import { initialize } from 'dummy/initializers/konva-components';
 import { module, test } from 'qunit';
 import Resolver from 'ember-resolver';
+import Application from '@ember/application';
 import { run } from '@ember/runloop';
 import { dasherize } from '@ember/string';
+
+import { initialize } from 'dummy/initializers/konva-components';
 
 const COMPONENT_NAMES = [
   'Arc',
