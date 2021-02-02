@@ -46,7 +46,7 @@ Examples
 
     <layer.Text
       @text="+"
-      @fontSize="36"
+      @fontSize={{36}}
       @x={{168}}
       @y={{60}}
       @fill="#020202"
@@ -63,7 +63,7 @@ Examples
 
     <layer.Text
       @text="="
-      @fontSize="36"
+      @fontSize={{36}}
       @x={{280}}
       @y={{60}}
       @fill="#020202"
