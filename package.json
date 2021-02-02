@@ -5,7 +5,7 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/mjanjic01/ember-konva",
   "license": "MIT",
   "author": "Matej Janjić <matej.janjic@productive.io>",
   "directories": {
