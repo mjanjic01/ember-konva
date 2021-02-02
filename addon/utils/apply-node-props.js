@@ -1,5 +1,3 @@
-// adapted FROM: https://github.com/lavrton/react-konva/blob/master/src/react-konva-fiber.js
-
 import updatePicture from 'ember-konva/utils/update-picture';
 
 const propsToSkip = { parent: true, afterNodeInit: true };
