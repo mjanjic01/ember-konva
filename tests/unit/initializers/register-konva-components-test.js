@@ -4,7 +4,7 @@ import Application from '@ember/application';
 import { run } from '@ember/runloop';
 import { dasherize } from '@ember/string';
 
-import { initialize } from 'dummy/initializers/konva-components';
+import { initialize } from 'dummy/initializers/register-konva-components';
 
 const COMPONENT_NAMES = [
   'Arc',

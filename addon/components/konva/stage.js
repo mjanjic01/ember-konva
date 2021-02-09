@@ -5,7 +5,7 @@ import { tracked } from '@glimmer/tracking';
 import updatePicture from 'ember-konva/utils/update-picture';
 
 export default class KonvaStage extends Component {
-  @tracked konvaNode
+  @tracked _konvaNode
 
   willDestroy() {
     super.willDestroy(...arguments);
@@ -14,8 +14,8 @@ export default class KonvaStage extends Component {
       return;
     }
 
-    this.konvaNode.destroy();
-    this.konvaNode = null;
+    this._konvaNode.destroy();
+    this._konvaNode = null;
   }
 
   @action
@@ -24,12 +24,12 @@ export default class KonvaStage extends Component {
       return;
     }
 
-    this.konvaNode = new Konva.Stage({
+    this._konvaNode = new Konva.Stage({
       ...this.args,
       container: element,
     });
 
-    updatePicture(this.konvaNode);
-    this.args.afterNodeInit?.(this.konvaNode);
+    updatePicture(this._konvaNode);
+    this.args.afterNodeInit?.(this._konvaNode);
   }
 }
