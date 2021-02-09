@@ -3,8 +3,6 @@
   ...attributes
 ></div>
 
-{{#if this.konvaNode}}
-  {{yield (hash
-    Layer=(component "konva/layer" parent=this.konvaNode)
-  )}}
+{{#if this._konvaNode}}
+  {{yield (hash Layer=(component "konva/layer" parent=this._konvaNode)) this._konvaNode}}
 {{/if}}
