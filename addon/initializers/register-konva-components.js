@@ -38,7 +38,6 @@ function createKonvaComponentClass(KonvaNode) {
   }
 }
 
-
 export function initialize(application) {
   KONVA_SHAPE_CLASSES.forEach((konvaClassName) => {
     const ComponentClass = createKonvaComponentClass(Konva[konvaClassName]);
