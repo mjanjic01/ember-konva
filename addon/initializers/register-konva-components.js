@@ -3,6 +3,7 @@ import hbs from 'htmlbars-inline-precompile';
 import {setComponentTemplate} from '@ember/component';
 import {dasherize} from '@ember/string';
 import KonvaComponent from 'ember-konva/components/konva';
+import KonvaModifierManager from 'ember-konva/modifier-managers/konva';
 
 const KONVA_CONTAINER_CLASSES = [
   'Group',
@@ -74,6 +75,6 @@ export function initialize(application) {
 }
 
 export default {
-  name: 'konva-components',
+  name: 'register-konva-components',
   initialize
 };
