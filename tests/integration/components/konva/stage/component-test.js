@@ -11,7 +11,6 @@ module('Integration | Component | konva/stage', function(hooks) {
       <Konva::Stage
         @width={{200}}
         @height={{180}}
-        @afterNodeInit={{this.afterNodeInit}}
         data-test-konva-stage
       />
     `);

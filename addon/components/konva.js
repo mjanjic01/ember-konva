@@ -4,26 +4,29 @@ import applyNodeProps from 'ember-konva/utils/apply-node-props';
 import updatePicture from 'ember-konva/utils/update-picture';
 
 class KonvaComponent {
+  #konvaNode = null
+  #oldProps = {}
+
   static create() {
     return new this(...arguments);
   }
 
   constructor(KonvaNode, props) {
-    this._konvaNode = new KonvaNode(props);
-    props.parent.add(this._konvaNode);
+    this.konvaNode = new KonvaNode(props);
+    props.parent.add(this.konvaNode);
     this.setProperties(props)
-    props.afterNodeInit?.(this._konvaNode);
+    props.didInsert?.(this.konvaNode);
   }
 
   setProperties(props) {
-    const oldProps = this.oldProps || {};
-    applyNodeProps(this._konvaNode, props, oldProps);
+    applyNodeProps(this.konvaNode, props, this.oldProps);
     this.oldProps = props;
   }
 
   destroy() {
-    updatePicture(this._konvaNode);
-    this._konvaNode.destroy();
+    this.oldProps.willDestroy?.(this.konvaNode);
+    updatePicture(this.konvaNode);
+    this.konvaNode.destroy();
   }
 }
 

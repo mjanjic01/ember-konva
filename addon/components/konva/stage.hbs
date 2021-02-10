@@ -1,8 +1,9 @@
 <div
   {{did-insert this.initializeKonva}}
+  {{did-update this.updateKonva this.props}}
   ...attributes
 ></div>
 
-{{#if this._konvaNode}}
-  {{yield (hash Layer=(component "konva/layer" parent=this._konvaNode)) this._konvaNode}}
+{{#if this.konvaNode}}
+  {{yield (hash Layer=(component "konva/layer" parent=this.konvaNode)) this.konvaNode}}
 {{/if}}

@@ -1,6 +1,6 @@
 import updatePicture from 'ember-konva/utils/update-picture';
 
-const propsToSkip = { parent: true, afterNodeInit: true };
+const propsToSkip = { parent: true, didInsert: true, willDestroy: true };
 const EVENTS_NAMESPACE = 'ember-konva-event';
 
 export default function applyNodeProps(instance, props = {}, oldProps = {}) {

@@ -5,6 +5,9 @@ import {tracked} from '@glimmer/tracking';
 import {action} from '@ember/object';
 
 export default class GuiComponent extends Component {
+  @tracked stageWidth = 1440
+  @tracked stageHeight = 1440
+
   @tracked circleX = 50
   @tracked circleY = 200
   @tracked circleWidth = 50
@@ -45,6 +48,7 @@ export default class GuiComponent extends Component {
 
     this.gui = new dat.GUI();
 
+    const stageFolder = this.gui.addFolder('Stage');
     const circleFolder = this.gui.addFolder('Circle');
     const rectFolder = this.gui.addFolder('Rect');
     const textFolder = this.gui.addFolder('Text');
@@ -52,6 +56,9 @@ export default class GuiComponent extends Component {
     this.gui.add(this, 'isCircleVisible');
     this.gui.add(this, 'isRectVisible');
     this.gui.add(this, 'isTextVisible');
+
+    stageFolder.add(this, 'stageWidth', 0, 5000);
+    stageFolder.add(this, 'stageHeight', 0, 5000);
 
     circleFolder.add(this, 'circleX', 0, 1000);
     circleFolder.add(this, 'circleY', 0, 1000);
