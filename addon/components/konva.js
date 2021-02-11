@@ -4,8 +4,8 @@ import applyNodeProps from 'ember-konva/utils/apply-node-props';
 import updatePicture from 'ember-konva/utils/update-picture';
 
 class KonvaComponent {
-  #konvaNode = null
-  #oldProps = {}
+  konvaNode
+  oldProps = {}
 
   static create() {
     return new this(...arguments);

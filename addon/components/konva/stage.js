@@ -6,7 +6,7 @@ import applyNodeProps from 'ember-konva/utils/apply-node-props';
 
 export default class KonvaStage extends Component {
   @tracked konvaNode
-  #oldProps = {}
+  oldProps = {}
 
   get props() {
     return {...this.args};
