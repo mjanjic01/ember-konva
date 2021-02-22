@@ -1,8 +1,9 @@
 import { capabilities } from '@ember/component';
 
 export default class KonvaComponentManager {
-  capabilities = capabilities('3.4', {
-    destructor: true
+  capabilities = capabilities('3.13', {
+    destructor: true,
+    updateHook: true
   })
 
   createComponent(factory, args) {
