@@ -7,7 +7,6 @@ import KonvaComponent from 'ember-konva/components/konva';
 const KONVA_CONTAINER_CLASSES = [
   'Group',
   'Layer',
-  'FastLayer',
   'Label'
 ];
 

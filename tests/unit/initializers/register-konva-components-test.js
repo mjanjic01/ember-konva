@@ -11,7 +11,6 @@ const COMPONENT_NAMES = [
   'Arrow',
   'Circle',
   'Ellipse',
-  'FastLayer',
   'Group',
   'Image',
   'Label',
