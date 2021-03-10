@@ -1,6 +1,6 @@
 {
   "name": "ember-konva",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Ember component bindings for Konva canvas library",
   "keywords": [
     "ember-addon"
