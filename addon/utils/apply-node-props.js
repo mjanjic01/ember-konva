@@ -61,7 +61,6 @@ export default function applyNodeProps(instance, props = {}, oldProps = {}) {
   }
 
   if (hasUpdates) {
-    console.log(updatedProps)
     instance.setAttrs(updatedProps);
     updatePicture(instance);
   }
