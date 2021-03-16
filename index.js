@@ -16,7 +16,7 @@ module.exports = {
 
     const config = {
       'ember-konva': {
-        strictMode: Boolean(customOptions?.strictMode)
+        strictMode: Boolean(customOptions && customOptions.strictMode)
       }
     };
 
