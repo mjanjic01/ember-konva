@@ -12,7 +12,7 @@ class KonvaComponent {
   }
 
   constructor(KonvaNode, props) {
-    this.konvaNode = new KonvaNode(props);
+    this.konvaNode = new KonvaNode({...props});
     props.parent.add(this.konvaNode);
     this.setProperties(props)
     props.didInsert?.(this.konvaNode);
