@@ -3389,6 +3389,23 @@ broccoli-concat@^4.2.2, broccoli-concat@^4.2.4:
     lodash.omit "^4.1.0"
     lodash.uniq "^4.2.0"
 
+broccoli-concat@^4.2.5:
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/broccoli-concat/-/broccoli-concat-4.2.5.tgz#d578f00094048b5fc87195e82fbdbde20d838d29"
+  integrity sha512-dFB5ATPwOyV8S2I7a07HxCoutoq23oY//LhM6Mou86cWUTB174rND5aQLR7Fu8FjFFLxoTbkk7y0VPITJ1IQrw==
+  dependencies:
+    broccoli-debug "^0.6.5"
+    broccoli-kitchen-sink-helpers "^0.3.1"
+    broccoli-plugin "^4.0.2"
+    ensure-posix-path "^1.0.2"
+    fast-sourcemap-concat "^2.1.0"
+    find-index "^1.1.0"
+    fs-extra "^8.1.0"
+    fs-tree-diff "^2.0.1"
+    lodash.merge "^4.6.2"
+    lodash.omit "^4.1.0"
+    lodash.uniq "^4.2.0"
+
 broccoli-config-loader@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/broccoli-config-loader/-/broccoli-config-loader-1.0.1.tgz#d10aaf8ebc0cb45c1da5baa82720e1d88d28c80a"
@@ -5476,10 +5493,10 @@ ember-cli-version-checker@^5.0.1, ember-cli-version-checker@^5.1.1, ember-cli-ve
     semver "^7.3.4"
     silent-error "^1.1.1"
 
-ember-cli@^3.26.0:
-  version "3.26.0"
-  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.26.0.tgz#19b3b9701df7ab78a23f7d0f44bf26e78f031f71"
-  integrity sha512-zmwUS1i4w7nFIwNjPLNGPlH0lOZjbOfUt51FQsbS8zqRgbbA/oYGAfpiTzJfO3bONjiKy3irEQIqbdBQaXFA7w==
+ember-cli@^3.26.1:
+  version "3.26.1"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.26.1.tgz#43e924454f1fcff6157863925d0eb33bfa593c24"
+  integrity sha512-jJ0kMob21A/HIqkDNWQMZnnpadjS/xaBlv1RU1NoCUi+3Lqpt9esDT9cK0QCFp9vh4zfU4BEBNYkMN/SiQMaGg==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-modules-amd" "^7.12.1"
@@ -5491,7 +5508,7 @@ ember-cli@^3.26.0:
     broccoli-amd-funnel "^2.0.1"
     broccoli-babel-transpiler "^7.8.0"
     broccoli-builder "^0.18.14"
-    broccoli-concat "^4.2.4"
+    broccoli-concat "^4.2.5"
     broccoli-config-loader "^1.0.1"
     broccoli-config-replace "^1.1.2"
     broccoli-debug "^0.6.5"
@@ -5998,10 +6015,10 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-ember@^10.3.0:
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.3.0.tgz#2e53ad334dc7f7f66f6cba890b9c01a64817d1c1"
-  integrity sha512-qmUQ6OYs8trr+4h3DPJz76fBgXBJEragLCD4RHV4bcnKd4vtgmJvFTF+UDlIsiZZVd03r5aYzpuQvVa+oH6JXg==
+eslint-plugin-ember@^10.4.0:
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.4.0.tgz#b249ab81e9f2e5b719f27f19a682fc4965e83be8"
+  integrity sha512-UjPalE+RgD4s/a3fq3tMFcG6uk+BbtoKxmaqJdzVWDufYNGhzQLeEw6pqc3UgMj+S36bv1om7rbDAPwp3cx2MA==
   dependencies:
     "@ember-data/rfc395-data" "^0.0.4"
     css-tree "^1.0.0-alpha.39"
@@ -8208,11 +8225,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
-
-konva@^7.2.5:
-  version "7.2.5"
-  resolved "https://registry.yarnpkg.com/konva/-/konva-7.2.5.tgz#9b4ac3a353e6be66e3e69123bf2a0cbc61efeb26"
-  integrity sha512-yk/li8rUF+09QNlOdkwbEId+QvfATMe/aMGVouWW1oFoUVTYWHsQuIAE6lWy11DK8mLJEJijkNAXC5K+NVlMew==
 
 leek@0.0.24:
   version "0.0.24"
