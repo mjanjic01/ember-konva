@@ -19,6 +19,10 @@ Installation
 
 ```
 ember install ember-konva
+
+npm install konva
+# OR
+yarn add konva
 ```
 
 
