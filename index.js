@@ -3,6 +3,17 @@
 module.exports = {
   name: require('./package').name,
 
+  options: {
+    autoImport: {
+      alias: {
+        'konva': 'konva.min.js'
+      }
+    },
+    babel: {
+      plugins: [ require.resolve('ember-auto-import/babel-plugin') ]
+    }
+  },
+
   _getAddonOptions() {
     const parentOptions = this.parent && this.parent.options;
     const appOptions = this.app && this.app.options;

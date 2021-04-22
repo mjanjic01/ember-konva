@@ -1,8 +1,8 @@
-import Konva from 'konva';
 import hbs from 'htmlbars-inline-precompile';
 import {setComponentTemplate} from '@ember/component';
 import {dasherize} from '@ember/string';
 import KonvaComponent from 'ember-konva/components/konva';
+import KonvaComponentManagerInitializer from 'ember-konva/initializers/register-konva-component-manager';
 
 const KONVA_CONTAINER_CLASSES = [
   'Group',
@@ -37,7 +37,9 @@ function createKonvaComponentClass(KonvaNode) {
   }
 }
 
-export function initialize(application) {
+export async function initialize(application) {
+  const Konva = await import('konva/konva.min.js');
+
   KONVA_SHAPE_CLASSES.forEach((konvaClassName) => {
     const ComponentClass = createKonvaComponentClass(Konva[konvaClassName]);
     application.register(`component:konva/${dasherize(konvaClassName)}`, ComponentClass);
@@ -73,5 +75,6 @@ export function initialize(application) {
 
 export default {
   name: 'register-konva-components',
+  after: KonvaComponentManagerInitializer.name,
   initialize
 };

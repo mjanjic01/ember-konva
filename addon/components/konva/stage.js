@@ -1,4 +1,3 @@
-import Konva from 'konva';
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
@@ -12,8 +11,10 @@ export default class KonvaStage extends Component {
     return {...this.args};
   }
 
-  willDestroy() {
+  async willDestroy() {
     super.willDestroy(...arguments);
+
+    const Konva = await import('konva/konva.min.js');
 
     if (!Konva.isBrowser) {
       return;
@@ -25,7 +26,9 @@ export default class KonvaStage extends Component {
   }
 
   @action
-  initializeKonva(element) {
+  async initializeKonva(element) {
+    const Konva = await import('konva/konva.min.js');
+
     if (!Konva.isBrowser) {
       return;
     }
