@@ -8,7 +8,7 @@ const EVENTS_NAMESPACE = 'ember-konva-event';
 const useStrictMode = config['ember-konva'].strictMode;
 
 export default function applyNodeProps(instance, props = {}, oldProps = {}) {
-  for (let key in oldProps) {
+  for (const key in oldProps) {
     if (propsToSkip[key]) {
       continue;
     }
@@ -34,7 +34,7 @@ export default function applyNodeProps(instance, props = {}, oldProps = {}) {
   const updatedProps = {};
   const newEvents = {};
 
-  for (let key in props) {
+  for (const key in props) {
     if (propsToSkip[key]) {
       continue;
     }
@@ -65,7 +65,7 @@ export default function applyNodeProps(instance, props = {}, oldProps = {}) {
     updatePicture(instance);
   }
 
-  for (let eventName in newEvents) {
+  for (const eventName in newEvents) {
     instance.on(`${eventName}.${EVENTS_NAMESPACE}`, newEvents[eventName]);
   }
 }
