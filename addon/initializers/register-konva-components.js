@@ -21,6 +21,7 @@ const KONVA_SHAPE_CLASSES = [
   'Rect',
   'RegularPolygon',
   'Ring',
+  'Shape',
   'Sprite',
   'Star',
   'Text',
@@ -59,6 +60,7 @@ export function initialize(application) {
         Rect=(component "konva/rect" parent=this.konvaNode)
         RegularPolygon=(component "konva/regular-polygon" parent=this.konvaNode)
         Ring=(component "konva/ring" parent=this.konvaNode)
+        Shape=(component "konva/shape" parent=this.konvaNode)
         Sprite=(component "konva/sprite" parent=this.konvaNode)
         Star=(component "konva/star" parent=this.konvaNode)
         Tag=(component "konva/tag" parent=this.konvaNode)

@@ -20,6 +20,7 @@ const COMPONENT_NAMES = [
   'Rect',
   'RegularPolygon',
   'Ring',
+  'Shape',
   'Sprite',
   'Star',
   'Tag',
