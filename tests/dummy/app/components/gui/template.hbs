@@ -91,5 +91,10 @@
         />
       </layer.Label>
     {{/if}}
+
+    {{!-- Examples of composite components --}}
+    <Smiley @parent={{layer}} @x={{80}} @y={{300}} @radius={{30}} @name="Athos" @back="yellow" @fore="black"/>
+    <Smiley @parent={{layer}} @x={{160}} @y={{300}} @radius={{30}} @name="Porthos" @back="cyan" @fore="black"/>
+    <Smiley @parent={{layer}} @x={{240}} @y={{300}} @radius={{30}} @name="Aramis" @back="pink" @fore="black"/>
   </stage.Layer>
 </Konva::Stage>
