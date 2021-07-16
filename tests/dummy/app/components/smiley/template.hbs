@@ -1,0 +1,7 @@
+<@parent.Group @draggable={{true}} as |G|>
+  <G.Circle @x={{@x}} @y={{@y}} @radius={{@radius}} @fill={{@back}} @stroke={{@fore}} @strokeWidth={{2}} />
+  <G.Circle @x={{leftEyeX}} @y={{eyeY}} @radius={{4}} @fill={{@fore}} />
+  <G.Circle @x={{rightEyeX}} @y={{eyeY}} @radius={{4}} @fill={{@fore}} />
+  <G.Arc @x={{@x}} @y={{mouthY}} @rotation={{70}} @innerRadius={{40}} @outerRadius={{43}} @angle={{40}} @fill={{@fore}} />
+  <G.Text @text={{@name}} @x={{nameX}} @width={{nameWidth}} @y={{nameY}} @align="center" /> 
+</@parent.Group>
