@@ -57,7 +57,9 @@
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "konva": ">=7.1.4"
+  },
   "engines": {
     "node": "8.* || >= 10.*"
   },
