@@ -1,4 +1,4 @@
-import {setComponentManager} from '@ember/component';
+import {setComponentManager} from '@glimmer/manager';
 import KonvaComponentManager from 'ember-konva/component-managers/konva';
 import applyNodeProps from 'ember-konva/utils/apply-node-props';
 import updatePicture from 'ember-konva/utils/update-picture';
